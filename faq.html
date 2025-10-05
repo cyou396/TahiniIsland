@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ — Tahini Island</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    header {
+      background: #0ea5a4;
+      color: white;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+
+    nav {
+      margin-top: 0.5em;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+    background-color: #ffffff;
+    color: #0ea5a4;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+  }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 1em;
+    }
+
+    footer {
+      background: #eee;
+      padding: 1em;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    /* Collapsible FAQ styling */
+    .faq-item {
+      margin: 1em 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+    }
+
+    .faq-item button {
+      width: 100%;
+      text-align: left;
+      padding: 1em;
+      font-size: 1.05em;
+      border: none;
+      outline: none;
+      background: #0ea5a4;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .faq-item button:hover {
+      background: #028483;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1em;
+      background: #f1f5f9;
+    }
+
+    .faq-answer p {
+      margin: 0.5em 0;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tahini Island</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="food.html">Food</a>
+      <a href="amenities.html">Amenities</a>
+      <a href="transport.html">Transportation</a>
+      <a href="lodging.html">Lodging & Hotels</a>
+      <a href="entertainment.html">Entertainment</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Frequently Asked Questions</h2>
+    <p>Click on a question below to reveal the answer.</p>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq1')">What voltage are power outlets?</button>
+      <div id="faq1" class="faq-answer">
+        <p>Power outlets are 120 volts (the same as in the United States).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq2')">Are there restrictions on alcohol?</button>
+      <div id="faq2" class="faq-answer">
+        <p>Alcohol is not allowed to be served or sold between the hours of midnight and 9:00 a.m.</p>
+        <p>The drinking age on Taniti is 18, though it is not strictly enforced.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq3')">Do people speak English?</button>
+      <div id="faq3" class="faq-answer">
+        <p>Many younger Tanitians speak fluent English. Very little English is spoken in rural areas, especially by
+          older residents.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq4')">What healthcare facilities are available?</button>
+      <div id="faq4" class="faq-answer">
+        <p>There is one hospital and several clinics. The hospital has many multilingual employees.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq5')">Is it safe?</button>
+      <div id="faq5" class="faq-answer">
+        <p>Violent crime is very rare on Taniti, but as tourism increases, there are more reports of pickpocketing and
+          other petty crimes.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq6')">What about holidays?</button>
+      <div id="faq6" class="faq-answer">
+        <p>Taniti enjoys many national holidays, and many tourist attractions and restaurants will be closed, so
+          visitors should plan accordingly.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ('faq7')">What currency is used?</button>
+      <div id="faq7" class="faq-answer">
+        <p>Taniti uses the U.S. dollar, but many businesses will also accept euros and yen. Several banks facilitate
+          currency exchange, and many businesses accept major credit cards.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script>
+    function toggleFAQ(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle("show");
+    }
+  </script>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+
+</html>
+

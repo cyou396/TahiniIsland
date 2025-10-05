@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transportation — Tahini Island</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f8fafc; color:#0f172a;}
+    header {background:#0ea5a4; color:white; padding:1em; position:sticky; top:0;}
+    header h1 {margin:0; font-size:1.4em;}
+    nav {margin-top:0.5em;}
+    nav a {color:white; margin-right:1em; text-decoration:none; font-weight:bold;}
+    nav a:hover {text-decoration:underline;}
+    main {max-width:900px; margin:20px auto; padding:0 1em;}
+    footer {background:#eee; padding:1em; text-align:center; margin-top:40px; font-size:0.9em;}
+    nav a.active {
+      background-color: #ffffff;
+      color: #0ea5a4;
+      padding: 0.4em 0.8em;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Tahini Island</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="food.html">Food</a>
+    <a href="amenities.html">Amenities</a>
+    <a href="transport.html" class="active">Transportation</a>
+    <a href="lodging.html">Lodging & Hotels</a>
+    <a href="entertainment.html">Entertainment</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+<h2>Transportation</h2><p>Learn how to get here and move around the island.</p>
+</main>
+<footer>
+</footer>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("nav a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+</body>
+</html>

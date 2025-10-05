@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entertainment — [Island Name]</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+  
+    header {
+      background: #0ea5a4;
+      color: white;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+    }
+  
+    header h1 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  
+    nav a {
+      color: white;
+      margin-right: 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      background-color: #ffffff;
+      color: #0ea5a4;
+      padding: 0.4em 0.8em;
+      border-radius: 4px;
+    }
+  
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 1em;
+    }
+  
+    footer {
+      background: #eee;
+      padding: 1em;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  
+    /* Dropdown (collapsible) styles */
+    .dropdown {
+      margin: 1em 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+    }
+  
+    .dropdown button {
+      width: 100%;
+      text-align: left;
+      padding: 1em;
+      font-size: 1.1em;
+      border: none;
+      outline: none;
+      background: #0ea5a4;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+    }
+  
+    .dropdown button:hover {
+      background: #028483;
+    }
+  
+    .dropdown-content {
+      display: none;
+      padding: 1em;
+      background: #f1f5f9;
+    }
+  
+    .dropdown-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  
+    .dropdown-content li {
+      margin: 0.5em 0;
+    }
+  
+    .dropdown-content a {
+      color: #0f172a;
+      text-decoration: none;
+    }
+  
+    .dropdown-content a:hover {
+      text-decoration: underline;
+    }
+  
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Tahini Island</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="food.html">Food</a>
+    <a href="amenities.html">Amenities</a>
+    <a href="transport.html">Transportation</a>
+    <a href="lodging.html">Lodging & Hotels</a>
+    <a href="entertainment.html" class="active">Entertainment</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+<p>Most people visit Taniti to enjoy the beaches, explore the rainforest, and visit the volcano. There are also many
+  other activities in Merriton Landing, the north side of Yellow Leaf Bay.</p>
+
+<!-- Nature & Outdoors -->
+<div class="dropdown">
+  <button onclick="toggleDropdown('nature')">Nature & Outdoors</button>
+  <div id="nature" class="dropdown-content">
+    <ul>
+      <li>Beaches</li>
+      <li>Rainforest</li>
+      <li>Volcano</li>
+      <li>Snorkeling</li>
+      <li>Zip-lining in the rainforest</li>
+      <li>Helicopter rides</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Cultural & Historical -->
+<div class="dropdown">
+  <button onclick="toggleDropdown('cultural')">Cultural & Historical</button>
+  <div id="cultural" class="dropdown-content">
+    <ul>
+      <li>Local history museum</li>
+      <li>Art galleries</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Food & Drink -->
+<div class="dropdown">
+  <button onclick="toggleDropdown('fooddrink')">Food & Drink</button>
+  <div id="fooddrink" class="dropdown-content">
+    <ul>
+      <li>Pubs</li>
+      <li>Microbrewery</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Fun & Games -->
+<div class="dropdown">
+  <button onclick="toggleDropdown('fun')">Fun & Games</button>
+  <div id="fun" class="dropdown-content">
+    <ul>
+      <li>Dance club</li>
+      <li>Arcade</li>
+      <li>Bowling</li>
+      <li>Nine-hole golf course (opening next year)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tours & Experiences -->
+<div class="dropdown">
+  <button onclick="toggleDropdown('tours')">Tours & Experiences</button>
+  <div id="tours" class="dropdown-content">
+    <ul>
+      <li>Chartered fishing tours</li>
+    </ul>
+  </div>
+</div>
+</main>
+<footer>
+</footer>
+<script>
+  function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle("show");
+  }
+</script>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("nav a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+</body>
+</html>
